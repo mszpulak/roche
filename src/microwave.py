@@ -63,6 +63,12 @@ class MicrowaveMachine:
             state=self.state,
         )
 
+    async def on_enter_on(self) -> None:
+        print("on_enter_on")
+
+    async def on_enter_off(self) -> None:
+        print("on_enter_off")
+
     async def after_plus_10_power(self) -> None:
         if self.current_power > 0:
             self.current_power += 0.1 * self.initial_power
