@@ -16,9 +16,7 @@ REDIS_PASS = os.getenv("REDIS_PASS")
 
 async def aget_redis_client():
     server_logger.info("RedisCluster:" + REDIS_SERVER)
-    client = ARedisCluster(
-        host=REDIS_SERVER, password=REDIS_PASS, cluster_error_retry_attempts=5
-    )
+    client = ARedisCluster(host=REDIS_SERVER, password=REDIS_PASS)
     await client.initialize()
     server_logger.info("Ping successful" + str(await client.ping()))
     yield client
@@ -27,9 +25,7 @@ async def aget_redis_client():
 
 def get_redis_client():
     server_logger.info("RedisCluster:" + REDIS_SERVER)
-    client = RedisCluster(
-        host=REDIS_SERVER, password=REDIS_PASS, cluster_error_retry_attempts=5
-    )
+    client = RedisCluster(host=REDIS_SERVER, password=REDIS_PASS)
     server_logger.info("Ping successful" + str(client.ping()))
     yield client
     client.close()
