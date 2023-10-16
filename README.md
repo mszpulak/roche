@@ -60,3 +60,5 @@ check endpoints using script
 ```bash
 curl http://127.0.0.1:3000
 ```
+
+![img.png](img.png)
