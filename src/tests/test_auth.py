@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
-from src.schema import StatusMessage, ButtonsMessage, Buttons
 
+from src.schema import StatusMessage, ButtonsMessage, Buttons
 
 off_message = StatusMessage(
     power=600,

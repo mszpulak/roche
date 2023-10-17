@@ -1,19 +1,20 @@
 import asyncio
-
-from fastapi import status, Depends, WebSocket, WebSocketDisconnect
-from websockets.exceptions import ConnectionClosedOK, ConnectionClosedError
-from transitions.core import MachineError
-from pydantic import ValidationError
-from src.schema import StatusMessage, ButtonsMessage, Buttons, Claims
 from typing import Any
-from src.auth import authorize_user
+
 from fastapi import APIRouter
-from src.microwave import state_machine
-from src.service import ButtonService
-from src.redis_session import Cacher, aget_redis_client
+from fastapi import status, Depends, WebSocket, WebSocketDisconnect
+from pydantic import ValidationError
 from redis.asyncio.cluster import RedisCluster
-from src.service_websockets import manager
+from transitions.core import MachineError
+from websockets.exceptions import ConnectionClosedOK, ConnectionClosedError
+
+from src.auth import authorize_user
 from src.logger import server_logger
+from src.microwave import state_machine
+from src.redis_session import Cacher, aget_redis_client
+from src.schema import StatusMessage, ButtonsMessage, Buttons, Claims
+from src.service import ButtonService
+from src.service_websockets import manager
 
 router = APIRouter()
 

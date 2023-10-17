@@ -1,8 +1,10 @@
-from fastapi import FastAPI
-from dotenv import load_dotenv
-from src.routes import router
-from fastapi.staticfiles import StaticFiles
 import os
+
+from dotenv import load_dotenv
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+from src.routes import router
 
 load_dotenv()
 

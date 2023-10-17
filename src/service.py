@@ -1,8 +1,10 @@
 import asyncio
-from src.schema import Buttons, StatusMessage
-from src.logger import server_logger
+
 from transitions import MachineError
+
 from src.errors import HTTPMachineStateError
+from src.logger import server_logger
+from src.schema import Buttons, StatusMessage
 
 
 class ButtonService:

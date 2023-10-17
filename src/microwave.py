@@ -1,6 +1,7 @@
 from transitions.extensions.asyncio import AsyncMachine
-from src.schema import MicrowaveState, StatusMessage
+
 from src.redis_session import Cacher, get_redis_client
+from src.schema import MicrowaveState, StatusMessage
 
 
 class MicrowaveMachine:

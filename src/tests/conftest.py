@@ -1,6 +1,6 @@
+import mock
 import pytest
 from fakeredis import aioredis, FakeRedis
-import mock
 
 
 @pytest.fixture(autouse=True)

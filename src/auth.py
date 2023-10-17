@@ -1,9 +1,11 @@
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from fastapi import Security
-import jwt
-from src.errors import HTTPUnauthorizedError
 import os
+
+import jwt
 from dotenv import load_dotenv
+from fastapi import Security
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+from src.errors import HTTPUnauthorizedError
 
 jwt_http_bearer = HTTPBearer(scheme_name="bearer", auto_error=True)
 

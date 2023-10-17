@@ -1,8 +1,9 @@
+import asyncio
 from typing import List
 
 from fastapi import WebSocket
+
 from src.schema import StatusMessage
-import asyncio
 
 
 class ConnectionManager:
